@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Forever Story ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(180deg,#0f0c29,#302b63,#24243e);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* LOCK */
+#lockScreen{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:1000;
+}
+
+input{
+    padding:10px;
+    border-radius:20px;
+    border:none;
+    margin-top:15px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#ff4e88;
+    color:white;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+/* TIMELINE */
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#ff4e88;
+    transform:translateX(-50%);
+}
+
+.event{
+    position:relative;
+    width:45%;
+    padding:20px;
+    margin:40px 0;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+    cursor:pointer;
+}
+
+.event.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.event:nth-child(odd){ left:0; }
+.event:nth-child(even){ left:55%; }
+
+.event img{
+    width:100%;
+    border-radius:15px;
+    margin-top:15px;
+    display:none;
+}
+
+.date{
+    font-size:12px;
+    opacity:0.6;
+}
+
+/* SECRET HEART */
+.secret-heart{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* FINAL MESSAGE */
+#loveMessage{
+    margin-top:40px;
+    font-size:20px;
+    text-align:center;
+}
+
+/* FIREWORKS */
+.firework{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:gold;
+    border-radius:50%;
+    animation:explode 1s ease-out forwards;
+}
+
+@keyframes explode{
+    0%{opacity:1;transform:scale(1);}
+    100%{opacity:0;transform:scale(20);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="lockScreen">
+<h2>Enter Our Secret Password ❤️hint we wish this each other every night</h2>
+<input type="password" id="passwordInput">
+<button onclick="unlock()">Unlock</button>
+</div>
+
+<audio id="bgMusic" src="C:\Users\anant\OneDrive\Desktop\indexh\Chale Aana De De Pyaar De 320 Kbps.mp3" loop></audio>
+
+<div class="timeline" id="mainContent" style="display:none;">
+
+<h1 style="text-align:center;">Our Love Timeline 💫</h1>
+
+<!-- ALL EVENTS -->
+
+<div class="event" onclick="toggle(this)">
+<h3>The First Message ✨</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-09 160310.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The First Long Talk 🌙</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2026-02-13 211427.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day I Asked Her Name 💕</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2026-02-13 213042.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The First Time She Called Me Professor 😌</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-19 010859.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day She Gave Me Her Autograph 🖊️</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-20 013712.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day We Revealed Faces 😳</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-21 024821.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Pink Heart Reaction Day 💗</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-21 114030.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Long Byeeeeeee Day 🥹</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-22 005615.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day She Called Me Special, Sundar & Friend 🤍</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-23 221544.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>"That akele padhre ho message" 📩</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-29 010901.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day She Talked About Adopting Kids 🏡</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-23 204157.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day She Gave Me Private VC Access 🎧</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-11-25 011257.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>Confession Day ❤️</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-12-02 224757.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day We Said I Love You 💞</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-12-13 040907.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>The Day She Called Me Husband 😭</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-12-24 160815.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>She Sent Her Photo in Red Dress ❤️‍🔥</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot 2025-12-26 135740.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>Our First Video Call 📹</h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\Screenshot_20260212-051158.png">
+</div>
+
+<div class="event" onclick="toggle(this)">
+<h3>Our Special Kiss Day </h3>
+<img src="C:\Users\anant\OneDrive\Desktop\indexh\626695933_912470527865116_4317874531328856775_n.jpg">
+</div>
+
+<div style="text-align:center;margin-top:100px;">
+<button onclick="finalSurprise()">Final Surprise 💌</button>
+<div id="loveMessage"></div>
+</div>
+
+</div>
+
+<div class="secret-heart" onclick="secretMessage()">💖</div>
+
+<script>
+function unlock(){
+    if(document.getElementById("passwordInput").value==="goodafternoon"){
+        document.getElementById("lockScreen").style.display="none";
+        document.getElementById("mainContent").style.display="block";
+        document.getElementById("bgMusic").play();
+    }else{
+        alert("Wrong password 🥺");
+    }
+}
+
+function toggle(element){
+    const img=element.querySelector("img");
+    img.style.display=img.style.display==="block"?"none":"block";
+}
+
+/* Scroll animation */
+const events=document.querySelectorAll(".event");
+window.addEventListener("scroll",()=>{
+    events.forEach(e=>{
+        const pos=e.getBoundingClientRect().top;
+        if(pos<window.innerHeight-100){
+            e.classList.add("show");
+        }
+    });
+});
+
+/* Final Surprise */
+function finalSurprise(){
+    const text="Three months ago, it was just a message.\nNow it's us.\nEvery moment in this timeline built something beautiful.\nThere are many more moments like these par sb nhi share kr paya wo aise hi batadunga\nTill date it feels so unreal mtlab how someone i just thought myself is with me now i will cry\n khene ko toh boht kuch hai waise chat mai khedunga\nI love you mommy aaisha khushi tuktuk biwi ji pati ji aur kya kya <3. Forever ❤️";
+    let i=0;
+    function type(){
+        if(i<text.length){
+            document.getElementById("loveMessage").innerHTML+=
+            text.charAt(i)==="\n"?"<br>":text.charAt(i);
+            i++;
+            setTimeout(type,50);
+        }else{
+            fireworks();
+        }
+    }
+    type();
+}
+
+function fireworks(){
+    for(let i=0;i<40;i++){
+        const f=document.createElement("div");
+        f.classList.add("firework");
+        f.style.left=Math.random()*100+"vw";
+        f.style.top=Math.random()*100+"vh";
+        document.body.appendChild(f);
+        setTimeout(()=>f.remove(),1000);
+    }
+}
+
+function secretMessage(){
+    alert("You found the hidden heart 💖\nYou're my forever and everything i love you aaisha so much.");
+}
+</script>
+
+</body>
+</html>
